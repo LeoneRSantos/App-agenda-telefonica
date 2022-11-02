@@ -6,6 +6,7 @@
 <Br>
 
 ### Conceitos utilizados no aplicativo:
+- CRUD (criar, recuperar, atualizar e deletar);
 - Classes, métodos e objetos;
 - Gerência de estado;
-- Provider
+- Provider.
