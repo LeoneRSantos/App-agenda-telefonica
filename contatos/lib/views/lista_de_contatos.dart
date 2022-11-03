@@ -12,7 +12,16 @@ class ListaDeContatos extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Center(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: IconButton(
+              onPressed: (){},
+              icon: const Icon(Icons.add),
+            ),
+          )
+        ],
+        title: const Center(
           child: Text('Contatos'),
         ),
       ),
