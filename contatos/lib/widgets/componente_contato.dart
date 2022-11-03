@@ -10,7 +10,7 @@ class ComponenteContato extends StatelessWidget {
     final avatarAlternativo = contato.urlDoAvatar == null ||
             contato.urlDoAvatar.isEmpty ||
             contato.urlDoAvatar == ''
-        ? CircleAvatar(
+        ? const CircleAvatar(
             child: Icon(Icons.person),
           )
         : CircleAvatar(
