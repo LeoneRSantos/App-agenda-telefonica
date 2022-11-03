@@ -18,6 +18,23 @@ class ComponenteContato extends StatelessWidget {
           );
     return ListTile(
       leading: avatarAlternativo,
+      title: Text(contato.nome),
+      subtitle: Text(contato.numero),
+      trailing: SizedBox(
+        width: 80.0,
+        child: Row(
+          children: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.edit),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.delete),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
