@@ -8,13 +8,13 @@ class ComponenteContato extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final avatarAlternativo = contato.urlDoAvatar == null ||
-            contato.urlDoAvatar.isEmpty ||
+            contato.urlDoAvatar!.isEmpty ||
             contato.urlDoAvatar == ''
         ? const CircleAvatar(
             child: Icon(Icons.person),
           )
         : CircleAvatar(
-            backgroundImage: NetworkImage(contato.urlDoAvatar),
+            backgroundImage: NetworkImage(contato.urlDoAvatar!),
           );
     return ListTile(
       leading: avatarAlternativo,
