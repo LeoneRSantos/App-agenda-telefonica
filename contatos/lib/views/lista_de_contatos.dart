@@ -29,7 +29,7 @@ class ListaDeContatos extends StatelessWidget {
       body: ListView.builder(
           itemCount: contatos.quantidadeDeElementos,
           itemBuilder: (BuildContext contexto, int indice) =>
-              ComponenteContato(contato: contatos.getItens.elementAt(indice))),
+              ComponenteContato(contato: contatos.getIndex(indice))),
     );
   }
 }
