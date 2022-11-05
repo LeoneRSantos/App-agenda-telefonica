@@ -46,4 +46,12 @@ class ContatosProvider with ChangeNotifier {
 
     notifyListeners();
   }
+
+  // Remover
+  void removeContatos(Contato contato){ 
+    if (contato != null && contato.id != null && contato.id != '') {
+      _itens.remove(contato.id); 
+      notifyListeners();
+    }
+  }
 }
