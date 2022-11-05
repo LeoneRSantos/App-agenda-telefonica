@@ -17,6 +17,7 @@ class ContatosProvider with ChangeNotifier {
     return _itens.values.elementAt(i);
   }
 
+  // Adicionar e atualizar
   void putContato(Contato contato) {
     if (contato == null) {
       return null;
