@@ -16,4 +16,33 @@ class ContatosProvider with ChangeNotifier {
   Contato getIndex(int i) {
     return _itens.values.elementAt(i);
   }
+
+  void putContato(Contato contato) {
+    if (contato == null) {
+      return null;
+    }
+
+    if (contato.id != null &&
+        contato.id.trim().isNotEmpty &&
+        _itens.containsKey(contato.id)) {
+      _itens.update(
+          contato.id,
+          (_) => Contato(
+                id: contato.id,
+                nome: contato.nome,
+                numero: contato.numero,
+              ));
+    }
+
+    _itens.putIfAbsent(
+      'key',
+      () => Contato(
+        id: contato.id,
+        nome: contato.nome,
+        numero: contato.numero,
+      ),
+    );
+
+    notifyListeners();
+  }
 }
