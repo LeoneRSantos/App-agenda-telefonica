@@ -1,3 +1,4 @@
+import 'package:contatos/views/formulario.dart';
 import 'package:flutter/material.dart';
 import '../models/contato.dart';
 
@@ -25,7 +26,11 @@ class ComponenteContato extends StatelessWidget {
         child: Row(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Formulario()),
+                );
+              },
               icon: const Icon(Icons.edit),
             ),
             IconButton(
