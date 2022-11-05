@@ -6,7 +6,13 @@ class Formulario extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        elevation: 0.0,
+        title: Text(
+          'Adicionar contato',
+          textAlign: TextAlign.center,
+        ),
+      ),
     );
   }
 }
