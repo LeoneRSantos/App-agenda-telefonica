@@ -12,4 +12,8 @@ class ContatosProvider with ChangeNotifier {
   int get quantidadeDeElementos {
     return _itens.length;
   }
+
+  Contato getIndex(int i) {
+    return _itens.values.elementAt(i);
+  }
 }
