@@ -1,4 +1,5 @@
 import 'package:contatos/provider/contatos_provider.dart';
+import 'package:contatos/views/formulario.dart';
 import 'package:contatos/widgets/componente_contato.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +18,11 @@ class ListaDeContatos extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const Formulario()),
+                );
+              },
               icon: const Icon(Icons.add),
             ),
           )
