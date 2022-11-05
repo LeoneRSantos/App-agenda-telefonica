@@ -1,13 +1,14 @@
-import 'package:contatos/data/mapa_contatos.dart';
+import 'package:contatos/provider/contatos_provider.dart';
 import 'package:contatos/widgets/componente_contato.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ListaDeContatos extends StatelessWidget {
   const ListaDeContatos({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final contatos = mapa_contatos;
+    final ContatosProvider contatos = Provider.of(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -16,7 +17,7 @@ class ListaDeContatos extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconButton(
-              onPressed: (){},
+              onPressed: () {},
               icon: const Icon(Icons.add),
             ),
           )
@@ -26,9 +27,9 @@ class ListaDeContatos extends StatelessWidget {
         ),
       ),
       body: ListView.builder(
-          itemCount: contatos.length,
+          itemCount: contatos.quantidadeDeElementos,
           itemBuilder: (BuildContext contexto, int indice) =>
-              ComponenteContato(contato: contatos.values.elementAt(indice))),
+              ComponenteContato(contato: contatos.getItens.elementAt(indice))),
     );
   }
 }
