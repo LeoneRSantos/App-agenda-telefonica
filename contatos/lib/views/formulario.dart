@@ -8,9 +8,11 @@ class Formulario extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        title: Text(
-          'Adicionar contato',
-          textAlign: TextAlign.center,
+        title: const Center(
+          child: Text(
+            'Adicionar contato',
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );
