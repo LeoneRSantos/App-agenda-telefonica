@@ -1,4 +1,7 @@
+import 'package:contatos/models/contato.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../provider/contatos_provider.dart';
 
 class Formulario extends StatelessWidget {
   Formulario({Key? key}) : super(key: key);
