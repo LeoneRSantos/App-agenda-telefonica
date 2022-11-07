@@ -20,7 +20,7 @@ class ListaDeContatos extends StatelessWidget {
             child: IconButton(
               onPressed: () {
                 Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const Formulario()),
+                  MaterialPageRoute(builder: (_) => Formulario()),
                 );
               },
               icon: const Icon(Icons.add),
