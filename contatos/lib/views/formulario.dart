@@ -71,7 +71,12 @@ class Formulario extends StatelessWidget {
                     elevation: 0.0,
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
+                    final _valido = _inputFormulario.currentState?.validate();
+
+                    if (_valido!) {
+                      _inputFormulario.currentState?.save();
+                      Navigator.of(context).pop();
+                    }
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
