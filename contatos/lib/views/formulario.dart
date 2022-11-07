@@ -45,6 +45,14 @@ class Formulario extends StatelessWidget {
                   decoration: const InputDecoration(
                     labelText: 'Número',
                   ),
+                  validator: (valor) {
+                    if (valor == null || valor.trim().isEmpty) {
+                      return "Este campo está vazio.";
+                    } else {
+                      _inputFormulario.currentState!.save();
+                    }
+                  },
+                  onSaved: ((valorInserido) => debugPrint(valorInserido)),
                 ),
               ),
               Padding(
