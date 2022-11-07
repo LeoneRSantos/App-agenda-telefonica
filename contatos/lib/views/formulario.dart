@@ -93,6 +93,14 @@ class Formulario extends StatelessWidget {
 
                     if (_valido!) {
                       _inputFormulario.currentState?.save();
+
+                      Provider.of<ContatosProvider>(context, listen: false)
+                          .putContato(Contato(
+                        id: _auxiliarFormulario['id'],
+                        nome: _auxiliarFormulario['nome']!,
+                        numero: _auxiliarFormulario['numero']!,
+                        urlDoAvatar: _auxiliarFormulario['urlDoAvatar'],
+                      ));
                       Navigator.of(context).pop();
                     }
                   },
