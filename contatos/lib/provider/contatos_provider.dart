@@ -24,14 +24,15 @@ class ContatosProvider with ChangeNotifier {
     }
 
     if (contato.id != null &&
-        contato.id.trim().isNotEmpty &&
+        contato.id!.trim().isNotEmpty &&
         _itens.containsKey(contato.id)) {
       _itens.update(
-          contato.id,
+          contato.id!,
           (_) => Contato(
                 id: contato.id,
                 nome: contato.nome,
                 numero: contato.numero,
+                urlDoAvatar: contato.urlDoAvatar
               ));
     }
 
@@ -40,7 +41,8 @@ class ContatosProvider with ChangeNotifier {
       () => Contato(
         id: contato.id,
         nome: contato.nome,
-        numero: contato.numero,
+        numero: contato.numero, 
+        urlDoAvatar: contato.urlDoAvatar,
       ),
     );
 
