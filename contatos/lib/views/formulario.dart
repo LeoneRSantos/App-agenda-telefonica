@@ -37,6 +37,7 @@ class Formulario extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextFormField(
+                  initialValue: _auxiliarFormulario['nome'],
                   decoration: const InputDecoration(
                     labelText: 'Nome',
                   ),
@@ -53,6 +54,7 @@ class Formulario extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextFormField(
+                  initialValue: _auxiliarFormulario['numero'],
                   decoration: const InputDecoration(
                     labelText: 'Número',
                   ),
@@ -69,6 +71,7 @@ class Formulario extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: TextFormField(
+                  initialValue: _auxiliarFormulario['urlDoAvatar'],
                   decoration: const InputDecoration(
                     labelText: 'URL do avatar',
                   ),
