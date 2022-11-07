@@ -1,5 +1,5 @@
 class Contato {
-  final String id;
+  final String? id;
   final String nome;
   final String numero;
   final String? urlDoAvatar;
