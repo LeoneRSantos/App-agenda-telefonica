@@ -6,6 +6,14 @@ import '../provider/contatos_provider.dart';
 class Formulario extends StatelessWidget {
   Formulario({Key? key}) : super(key: key);
   final _inputFormulario = GlobalKey<FormState>();
+  final Map<String, String?> _auxiliarFormulario = {};
+
+  void _carregarDados(Contato contato) {
+    _auxiliarFormulario['id'] = contato.id;
+    _auxiliarFormulario['nome'] = contato.nome;
+    _auxiliarFormulario['numero'] = contato.numero;
+    _auxiliarFormulario['urlDoAvatar'] = contato.urlDoAvatar;
+  }
 
   @override
   Widget build(BuildContext context) {
