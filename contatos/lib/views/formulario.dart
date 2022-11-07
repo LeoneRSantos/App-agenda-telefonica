@@ -48,7 +48,8 @@ class Formulario extends StatelessWidget {
                       _inputFormulario.currentState!.save();
                     }
                   },
-                  onSaved: (valorInserido) => debugPrint(valorInserido),
+                  onSaved: (valorInserido) =>
+                      _auxiliarFormulario['nome'] = valorInserido,
                 ),
               ),
               Padding(
@@ -65,7 +66,8 @@ class Formulario extends StatelessWidget {
                       _inputFormulario.currentState!.save();
                     }
                   },
-                  onSaved: ((valorInserido) => debugPrint(valorInserido)),
+                  onSaved: ((valorInserido) =>
+                      _auxiliarFormulario['numero'] = valorInserido),
                 ),
               ),
               Padding(
@@ -75,6 +77,8 @@ class Formulario extends StatelessWidget {
                   decoration: const InputDecoration(
                     labelText: 'URL do avatar',
                   ),
+                  onSaved: (valorIserido) =>
+                      _auxiliarFormulario['urlDoAvatar'] = valorIserido,
                 ),
               ),
               Padding(
