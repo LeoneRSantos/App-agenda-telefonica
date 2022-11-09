@@ -19,6 +19,10 @@ class Formulario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final contatoAtual = ModalRoute.of(context)!.settings.arguments as Contato;
+
+    _carregarDados(contatoAtual);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
