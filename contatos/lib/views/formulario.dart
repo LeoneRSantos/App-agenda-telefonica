@@ -9,10 +9,12 @@ class Formulario extends StatelessWidget {
   final Map<String, String?> _auxiliarFormulario = {};
 
   void _carregarDados(Contato contato) {
-    _auxiliarFormulario['id'] = contato.id;
-    _auxiliarFormulario['nome'] = contato.nome;
-    _auxiliarFormulario['numero'] = contato.numero;
-    _auxiliarFormulario['urlDoAvatar'] = contato.urlDoAvatar;
+    if (contato != null) {
+      _auxiliarFormulario['id'] = contato.id;
+      _auxiliarFormulario['nome'] = contato.nome;
+      _auxiliarFormulario['numero'] = contato.numero;
+      _auxiliarFormulario['urlDoAvatar'] = contato.urlDoAvatar;
+    }
   }
 
   @override
