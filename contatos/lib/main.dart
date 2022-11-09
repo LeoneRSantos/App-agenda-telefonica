@@ -1,4 +1,6 @@
 import 'package:contatos/provider/contatos_provider.dart';
+import 'package:contatos/routes/rotas_do_app.dart';
+import 'package:contatos/views/formulario.dart';
 import 'package:contatos/views/lista_de_contatos.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +23,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: ListaDeContatos(),
+        routes: {
+          RotasDoApp.rotaHome: (context) => const ListaDeContatos(),
+          RotasDoApp.rotaFormulario: (context) => Formulario(),
+        },
       ),
     );
   }
