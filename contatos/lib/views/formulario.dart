@@ -3,9 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../provider/contatos_provider.dart';
 
-class Formulario extends StatelessWidget {
+class Formulario extends StatefulWidget {
   Formulario({Key? key}) : super(key: key);
+
+  @override
+  State<Formulario> createState() => _FormularioState();
+}
+
+class _FormularioState extends State<Formulario> {
   final _inputFormulario = GlobalKey<FormState>();
+
   final Map<String, String?> _auxiliarFormulario = {};
 
   void _carregarDados(Contato contato) {
@@ -18,11 +25,16 @@ class Formulario extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
     final contatoAtual = ModalRoute.of(context)!.settings.arguments as Contato;
 
     _carregarDados(contatoAtual);
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
