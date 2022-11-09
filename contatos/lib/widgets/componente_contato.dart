@@ -1,5 +1,7 @@
+import 'package:contatos/provider/contatos_provider.dart';
 import 'package:contatos/routes/rotas_do_app.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../models/contato.dart';
 
 class ComponenteContato extends StatelessWidget {
@@ -35,7 +37,35 @@ class ComponenteContato extends StatelessWidget {
               icon: const Icon(Icons.edit),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: ((context) => AlertDialog(
+                        title: Text('Excluir contato'),
+                        content: Text(
+                            'Tem certeza de que deseja excluir o contato ${contato.nome}?'),
+                        actions: [
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(elevation: 0.0),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Não'),
+                          ),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(elevation: 0.0),
+                            onPressed: () {
+                              Provider.of<ContatosProvider>(context,
+                                      listen: false)
+                                  .removeContatos(contato);
+                              Navigator.pop(context);
+                            },
+                            child: Text('Sim'),
+                          ),
+                        ],
+                      )),
+                );
+              },
               icon: const Icon(Icons.delete),
             ),
           ],
