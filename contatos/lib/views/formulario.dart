@@ -102,7 +102,7 @@ class Formulario extends StatelessWidget {
 
                       Provider.of<ContatosProvider>(context, listen: false)
                           .putContato(Contato(
-                        id: _auxiliarFormulario['id'],
+                        id: _auxiliarFormulario['id']!,
                         nome: _auxiliarFormulario['nome']!,
                         numero: _auxiliarFormulario['numero']!,
                         urlDoAvatar: _auxiliarFormulario['urlDoAvatar'],
