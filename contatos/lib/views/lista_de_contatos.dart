@@ -21,6 +21,13 @@ class ListaDeContatos extends StatelessWidget {
       appBar: AppBar(
         elevation: 0.0,
         actions: [
+          IconButton(
+            onPressed: () {
+              cubit.alterarTema();
+            },
+            icon:
+                cubit.getTema ? const Icon(Icons.dark_mode) : const Icon(Icons.light_mode),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: IconButton(
