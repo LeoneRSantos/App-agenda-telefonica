@@ -26,8 +26,9 @@ class ListaDeContatos extends StatelessWidget {
             onPressed: () {
               cubit.alterarTema();
             },
-            icon:
-                cubit.getTema ? const Icon(Icons.dark_mode) : const Icon(Icons.light_mode),
+            icon: cubit.getTema
+                ? const Icon(Icons.dark_mode)
+                : const Icon(Icons.light_mode),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
