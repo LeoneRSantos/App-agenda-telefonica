@@ -8,7 +8,13 @@ import 'package:provider/provider.dart';
 import 'provider/tema_cubit.dart';
 
 void main() {
-  runApp(const MyApp());
+    runApp(
+    MultiBlocProvider(providers: [
+      BlocProvider(
+        create: (context) => TemaCubit(),
+      )
+    ], child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
