@@ -19,8 +19,9 @@ class ComponenteContato extends StatelessWidget {
         : CircleAvatar(
             backgroundImage: NetworkImage(contato.urlDoAvatar!),
           );
-    return ListTile(
-      leading: avatarAlternativo,
+    return SingleChildScrollView(
+      child: ListTile(
+        leading: avatarAlternativo,
       title: Text(contato.nome),
       subtitle: Text(contato.numero),
       trailing: SizedBox(
