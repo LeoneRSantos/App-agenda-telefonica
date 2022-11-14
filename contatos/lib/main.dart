@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
 
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
+    TemaCubit temaAtual = BlocProvider.of<TemaCubit>(context, listen: true);
+
     return ChangeNotifierProvider(
       create: ((context) => ContatosProvider()),
       child: MaterialApp(
