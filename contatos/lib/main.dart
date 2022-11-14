@@ -30,9 +30,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: temaAtual.getTema? ThemeData.dark():ThemeData.light(),
         routes: {
           RotasDoApp.rotaHome: (context) => const ListaDeContatos(),
           RotasDoApp.rotaFormulario: (context) => Formulario(),
