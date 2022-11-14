@@ -12,6 +12,10 @@ class ListaDeContatos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ContatosProvider contatos = Provider.of(context);
+    final TemaCubit cubit = BlocProvider.of<TemaCubit>(
+      context,
+      listen: true,
+    );
 
     return Scaffold(
       appBar: AppBar(
