@@ -19,6 +19,7 @@ class ListaDeContatos extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         elevation: 0.0,
         actions: [
           IconButton(
