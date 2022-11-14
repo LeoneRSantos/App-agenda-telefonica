@@ -1,7 +1,9 @@
 import 'package:contatos/provider/contatos_provider.dart';
+import 'package:contatos/provider/tema_cubit.dart';
 import 'package:contatos/routes/rotas_do_app.dart';
 import 'package:contatos/widgets/componente_contato.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class ListaDeContatos extends StatelessWidget {
