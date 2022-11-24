@@ -43,6 +43,9 @@ class _FormularioState extends State<Formulario> {
           child: Text(
             'Adicionar contato',
             textAlign: TextAlign.center,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
@@ -110,10 +113,10 @@ class _FormularioState extends State<Formulario> {
                     ),
                     onPressed: () {
                       final _valido = _inputFormulario.currentState?.validate();
-        
+
                       if (_valido!) {
                         _inputFormulario.currentState?.save();
-        
+
                         Provider.of<ContatosProvider>(context, listen: false)
                             .putContato(Contato(
                           id: _auxiliarFormulario['id'],
@@ -126,7 +129,13 @@ class _FormularioState extends State<Formulario> {
                     },
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Text('Adicionar'),
+                      child: Text(
+                        'Adicionar',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                        ),
+                      ),
                     ),
                   ),
                 ),
