@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Temas {
   static ThemeData temaClaro = ThemeData(
+    fontFamily: 'OpenSans',
     scaffoldBackgroundColor: const Color(0xFFfefdfe),
     colorScheme: const ColorScheme(
         brightness: Brightness.light,
@@ -18,6 +19,7 @@ class Temas {
   );
 
   static ThemeData temaEscuro = ThemeData(
+    fontFamily: 'OpenSans',
     scaffoldBackgroundColor: const Color(0xFF0e050f),
     colorScheme: const ColorScheme(
         brightness: Brightness.dark,
