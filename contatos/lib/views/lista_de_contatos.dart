@@ -43,7 +43,10 @@ class ListaDeContatos extends StatelessWidget {
           )
         ],
         title: const Center(
-          child: Text('Contatos'),
+          child: Text(
+            'Contatos',
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
         ),
       ),
       body: ListView.builder(
