@@ -26,6 +26,7 @@ class ComponenteContato extends StatelessWidget {
           contato.nome,
           style: TextStyle(
             color: Theme.of(context).colorScheme.secondary,
+            fontWeight: FontWeight.bold,
           ),
         ),
         subtitle: Text(
