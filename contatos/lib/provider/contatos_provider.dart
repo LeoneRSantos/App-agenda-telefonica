@@ -69,7 +69,7 @@ class ContatosProvider with ChangeNotifier {
 
   // Remover
   void removeContatos(Contato contato) {
-    if (contato != null && contato.id != null && contato.id != '') {
+    if (contato.id != null && contato.id!.isNotEmpty) {
       _itens.remove(contato.id);
       notifyListeners();
     }
