@@ -21,10 +21,6 @@ class ContatosProvider with ChangeNotifier {
 
   // Adicionar e atualizar
   void putContato(Contato contato) {
-    if (contato == null) {
-      return null;
-    }
-
     if (contato.id != null &&
         contato.id!.trim().isNotEmpty &&
         _itens.containsKey(contato.id)) {
