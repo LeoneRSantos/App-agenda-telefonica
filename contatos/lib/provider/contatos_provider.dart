@@ -53,6 +53,17 @@ class ContatosProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  // Atualizar contato
+  void atualizarContato(Contato contato) {
+    _itens.update(
+        contato.id!,
+        (_) => Contato(
+            id: contato.id,
+            nome: contato.nome,
+            numero: contato.numero,
+            urlDoAvatar: contato.urlDoAvatar));
+    debugPrint(
+        'Contato modificado -> nome: ${contato.nome}, número: ${contato.numero}, id: ${contato.id}');
     notifyListeners();
   }
 
