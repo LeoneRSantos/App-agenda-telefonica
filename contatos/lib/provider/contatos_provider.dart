@@ -5,6 +5,8 @@ import '../models/contato.dart';
 class ContatosProvider with ChangeNotifier {
   final Map<String, Contato> _itens = {...mapa_contatos};
 
+  int auxID = 5;
+
   List<Contato> get getItens {
     return [..._itens.values];
   }
