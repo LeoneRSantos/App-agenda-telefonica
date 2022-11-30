@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:contatos/models/contato.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
