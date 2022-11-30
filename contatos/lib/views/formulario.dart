@@ -15,6 +15,20 @@ class _FormularioState extends State<Formulario> {
   final _inputFormulario = GlobalKey<FormState>();
 
   final Map<String, String?> _auxiliarFormulario = {};
+  final _chars =
+      'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+  Random _rnd = Random();
+
+  String getRandomString(int length) => String.fromCharCodes(Iterable.generate(
+      length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+
+  String _definirId(String? id) {
+    if (id == null) {
+      return getRandomString(3);
+    } else {
+      return id;
+    }
+  }
 
   void _carregarDados(Contato contato) {
     if (contato != null) {
