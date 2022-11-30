@@ -34,15 +34,24 @@ class ContatosProvider with ChangeNotifier {
     }
   }
 
+  // Adicionar contato
+  void adicionarContato(Contato contato) {
     _itens.putIfAbsent(
-      'key',
+      '$auxID',
       () => Contato(
         id: contato.id,
         nome: contato.nome,
-        numero: contato.numero, 
+        numero: contato.numero,
         urlDoAvatar: contato.urlDoAvatar,
       ),
     );
+    debugPrint(
+        'Contato adicionado -> nome: ${contato.nome}, número: ${contato.numero}, id: ${contato.id}');
+    debugPrint('chave do contato: ${_itens.keys}');
+    auxID++;
+
+    notifyListeners();
+  }
 
     notifyListeners();
   }
