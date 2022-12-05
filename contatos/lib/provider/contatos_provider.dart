@@ -3,27 +3,25 @@ import 'package:flutter/material.dart';
 import '../models/contato.dart';
 
 class ContatosProvider with ChangeNotifier {
-  final Map<String, Contato> _itens = {...mapa_contatos};
-
   int auxID = 5;
 
   List<Contato> get getItens {
-    return [..._itens.values];
+    return [...Dados.mapa_contatos.values];
   }
 
   int get quantidadeDeElementos {
-    return _itens.length;
+    return Dados.mapa_contatos.length;
   }
 
   Contato getIndex(int i) {
-    return _itens.values.elementAt(i);
+    return Dados.mapa_contatos.values.elementAt(i);
   }
 
   // Adicionar e atualizar
   void putContato(Contato contato) {
     if (contato.id != null &&
         contato.id!.trim().isNotEmpty &&
-        _itens.containsKey(contato.id)) {
+        Dados.mapa_contatos.containsKey(contato.id)) {
       atualizarContato(contato);
     } else {
       adicionarContato(contato);
@@ -32,10 +30,10 @@ class ContatosProvider with ChangeNotifier {
 
   // Adicionar contato
   void adicionarContato(Contato contato) {
-    _itens.putIfAbsent(
+    Dados.mapa_contatos.putIfAbsent(
       '$auxID',
       () => Contato(
-        id: contato.id,
+        id: '$auxID',
         nome: contato.nome,
         numero: contato.numero,
         urlDoAvatar: contato.urlDoAvatar,
@@ -43,7 +41,7 @@ class ContatosProvider with ChangeNotifier {
     );
     debugPrint(
         'Contato adicionado -> nome: ${contato.nome}, número: ${contato.numero}, id: ${contato.id}');
-    debugPrint('chave do contato: ${_itens.keys}');
+    debugPrint('chave do contato: ${Dados.mapa_contatos.keys}');
     auxID++;
 
     notifyListeners();
@@ -51,7 +49,7 @@ class ContatosProvider with ChangeNotifier {
 
   // Atualizar contato
   void atualizarContato(Contato contato) {
-    _itens.update(
+    Dados.mapa_contatos.update(
         contato.id!,
         (_) => Contato(
             id: contato.id,
@@ -66,7 +64,7 @@ class ContatosProvider with ChangeNotifier {
   // Remover
   void removeContatos(Contato contato) {
     if (contato.id != null && contato.id!.isNotEmpty) {
-      _itens.remove(contato.id);
+      Dados.mapa_contatos.remove(contato.id);
       notifyListeners();
     }
   }
