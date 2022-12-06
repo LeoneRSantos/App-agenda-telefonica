@@ -38,7 +38,10 @@ class ListaDeContatos extends StatelessWidget {
                   RotasDoApp.rotaFormulario,
                 );
               },
-              icon: const Icon(Icons.add),
+              icon: const Icon(
+                Icons.add,
+                size: 28.0,
+              ),
             ),
           )
         ],
