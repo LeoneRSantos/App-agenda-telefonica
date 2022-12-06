@@ -20,75 +20,79 @@ class ComponenteContato extends StatelessWidget {
             backgroundImage: NetworkImage(contato.urlDoAvatar!),
           );
     return SingleChildScrollView(
-      child: ListTile(
-        leading: avatarAlternativo,
-        title: Text(
-          contato.nome,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.secondary,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        subtitle: Text(
-          contato.numero,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.secondary,
-          ),
-        ),
-        trailing: SizedBox(
-          width: 96.0,
-          child: Row(
-            children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed(
-                    RotasDoApp.rotaFormulario,
-                    arguments: contato,
-                  );
-                },
-                icon: Icon(
-                  Icons.edit,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+      child: Column(
+        children: [
+          ListTile(
+            leading: avatarAlternativo,
+            title: Text(
+              contato.nome,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.secondary,
+                fontWeight: FontWeight.bold,
               ),
-              IconButton(
-                onPressed: () {
-                  showDialog(
-                    context: context,
-                    builder: ((context) => AlertDialog(
-                          title: const Text('Excluir contato'),
-                          content: Text(
-                              'Tem certeza de que deseja excluir o contato ${contato.nome}?'),
-                          actions: [
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(elevation: 0.0),
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              child: const Text('Não'),
-                            ),
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(elevation: 0.0),
-                              onPressed: () {
-                                Provider.of<ContatosProvider>(context,
-                                        listen: false)
-                                    .removeContatos(contato);
-                                Navigator.pop(context);
-                              },
-                              child: const Text('Sim'),
-                            ),
-                          ],
-                        )),
-                  );
-                },
-                icon: Icon(
-                  Icons.delete,
-                  color: Theme.of(context).colorScheme.surface,
-                ),
+            ),
+            subtitle: Text(
+              contato.numero,
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.secondary,
               ),
-            ],
-          ),
-        ),
+            ),
+            trailing: SizedBox(
+              width: 96.0,
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(
+                        RotasDoApp.rotaFormulario,
+                        arguments: contato,
+                      );
+                    },
+                    icon: Icon(
+                      Icons.edit,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      showDialog(
+                        context: context,
+                        builder: ((context) => AlertDialog(
+                              title: const Text('Excluir contato'),
+                              content: Text(
+                                  'Tem certeza de que deseja excluir o contato ${contato.nome}?'),
+                              actions: [
+                                ElevatedButton(
+                                  style:
+                                      ElevatedButton.styleFrom(elevation: 0.0),
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Não'),
+                                ),
+                                ElevatedButton(
+                                  style:
+                                      ElevatedButton.styleFrom(elevation: 0.0),
+                                  onPressed: () {
+                                    Provider.of<ContatosProvider>(context,
+                                            listen: false)
+                                        .removeContatos(contato);
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text('Sim'),
+                                ),
+                              ],
+                            )),
+                      );
+                    },
+                    icon: Icon(
+                      Icons.delete,
+                      color: Theme.of(context).colorScheme.surface,
+                    ),
+                  ),
+                ],
+              ),
+            ),
       ),
     );
   }
