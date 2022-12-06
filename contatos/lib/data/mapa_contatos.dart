@@ -2,7 +2,9 @@ import 'package:contatos/models/contato.dart';
 import 'package:flutter/material.dart';
 
 class Dados {
-  static Map<String, Contato> mapa_contatos = {
+  int auxID = 5;
+
+  final Map<String, Contato> _mapa_contatos = {
     '1': Contato(
         id: '1',
         nome: 'Ana',
