@@ -30,4 +30,34 @@ class Dados {
         urlDoAvatar:
             'https://cdn.pixabay.com/photo/2017/02/23/13/05/avatar-2092113__340.png'),
   };
+
+  Map get getDados => _mapa_contatos;
+
+  void adicionar(Contato contato) {
+    getDados.putIfAbsent(
+      '$auxID',
+      () => Contato(
+        id: '$auxID',
+        nome: contato.nome,
+        numero: contato.numero,
+        urlDoAvatar: contato.urlDoAvatar,
+      ),
+    );
+    auxID++;
+  }
+
+  void atualizar(Contato contato) {
+    getDados.update(
+        contato.id!,
+        (_) => Contato(
+            id: contato.id,
+            nome: contato.nome,
+            numero: contato.numero,
+            urlDoAvatar: contato.urlDoAvatar));
+    
+  }
+
+  void remover(Contato contato) {
+    getDados.remove(contato.id);
+  }
 }
