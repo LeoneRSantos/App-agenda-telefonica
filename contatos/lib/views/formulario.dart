@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:contatos/models/contato.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -40,15 +39,6 @@ class _FormularioState extends State<Formulario> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         elevation: 0.0,
-        title: const Center(
-          child: Text(
-            'Adicionar contato',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32.0, horizontal: 8.0),
@@ -131,7 +121,7 @@ class _FormularioState extends State<Formulario> {
                     child: const Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Text(
-                        'Adicionar',
+                        'Salvar',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16.0,
