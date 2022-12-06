@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/contato.dart';
 
 class ContatosProvider with ChangeNotifier {
-  int auxID = 5;
+  Dados dados = Dados();
 
   List<Contato> get getItens {
     return [...Dados.mapa_contatos.values];
