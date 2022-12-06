@@ -6,22 +6,22 @@ class ContatosProvider with ChangeNotifier {
   Dados dados = Dados();
 
   List<Contato> get getItens {
-    return [...Dados.mapa_contatos.values];
+    return [...dados.getDados.values];
   }
 
   int get quantidadeDeElementos {
-    return Dados.mapa_contatos.length;
+    return dados.getDados.length;
   }
 
   Contato getIndex(int i) {
-    return Dados.mapa_contatos.values.elementAt(i);
+    return dados.getDados.values.elementAt(i);
   }
 
   // Adicionar e atualizar
   void putContato(Contato contato) {
     if (contato.id != null &&
         contato.id!.trim().isNotEmpty &&
-        Dados.mapa_contatos.containsKey(contato.id)) {
+        dados.getDados.containsKey(contato.id)) {
       atualizarContato(contato);
     } else {
       adicionarContato(contato);
@@ -30,41 +30,21 @@ class ContatosProvider with ChangeNotifier {
 
   // Adicionar contato
   void adicionarContato(Contato contato) {
-    Dados.mapa_contatos.putIfAbsent(
-      '$auxID',
-      () => Contato(
-        id: '$auxID',
-        nome: contato.nome,
-        numero: contato.numero,
-        urlDoAvatar: contato.urlDoAvatar,
-      ),
-    );
-    debugPrint(
-        'Contato adicionado -> nome: ${contato.nome}, número: ${contato.numero}, id: ${contato.id}');
-    debugPrint('chave do contato: ${Dados.mapa_contatos.keys}');
-    auxID++;
+    dados.adicionar(contato);
 
     notifyListeners();
   }
 
   // Atualizar contato
   void atualizarContato(Contato contato) {
-    Dados.mapa_contatos.update(
-        contato.id!,
-        (_) => Contato(
-            id: contato.id,
-            nome: contato.nome,
-            numero: contato.numero,
-            urlDoAvatar: contato.urlDoAvatar));
-    debugPrint(
-        'Contato modificado -> nome: ${contato.nome}, número: ${contato.numero}, id: ${contato.id}');
+    dados.atualizar(contato);
     notifyListeners();
   }
 
   // Remover
   void removeContatos(Contato contato) {
     if (contato.id != null && contato.id!.isNotEmpty) {
-      Dados.mapa_contatos.remove(contato.id);
+      dados.remover(contato);
       notifyListeners();
     }
   }
